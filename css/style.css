@@ -1,0 +1,507 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(231, 100%, 99%);
+    --White: hsl(0, 0%, 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--Magnolia);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.parent {
+    background-color: var(--White);
+    height: 600px;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    box-shadow: 0 0 20px -10px;
+    position: relative;
+    width: 950px;
+}
+
+.parent .steps {
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    padding: 30px 0 0 44px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    width: 38%;
+}
+
+.parent .steps ul {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.parent .steps ul li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.parent .steps ul li span {
+    min-width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: bold;
+    border: solid 1px var(--Light-blue);
+    color: var(--White);
+}
+
+.parent .steps ul .active li span {
+    background-color: var(--Light-blue);
+    color: #000;
+}
+
+.parent .steps ul li div>h5 {
+    color: var(--Cool-gray);
+    padding-bottom: 5px;
+}
+
+.parent .steps ul li div>h4 {
+    color: var(--White);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: calc(100% - 264.53px);
+    position: absolute;
+    right: 0;
+    padding: 0 50px;
+}
+
+.buttons button,
+.buttons input {
+    cursor: pointer;
+    transition: .4s;
+    padding: 15px 30px;
+    font-weight: bold;
+    color: var(--White);
+    border: none;
+    text-transform: capitalize;
+    border-radius: 6px;
+}
+
+.buttons .next {
+    background-color: var(--Marine-blue);
+}
+
+.buttons .back {
+    color: var(--Cool-gray);
+    background-color: transparent;
+}
+
+.buttons .next:hover {
+    background-color: var(--Purplish-blue)
+}
+
+.buttons .back:hover {
+    color: var(--Marine-blue);
+}
+
+.parent .content {
+    padding: 50px 80px 30px 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.parent .content .con {
+    display: none;
+    width: 100%;
+}
+
+.parent .content .active {
+    display: block;
+}
+
+.parent .content .con h1 {
+    font-size: 35px;
+    color: var(--Marine-blue);
+}
+
+.parent .content .con p {
+    color: var(--Cool-gray);
+    padding: 15px 0 40px;
+}
+
+.parent .content .con form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 40px;
+}
+
+.parent .content .con form label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: var(--Cool-gray);
+    z-index: 0;
+    transition: .4s;
+}
+
+.parent .content .con form input {
+    min-width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: solid 1px var(--Cool-gray);
+    font-size: 17px;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.parent .content .con form .inp>span {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    color: rgba(255, 0, 0, 0.822);
+    display: none;
+    transition: .4s;
+}
+
+.parent .content .con form .inp {
+    position: relative;
+}
+
+.parent .content .con form .inp input:focus {
+    border: solid 1px var(--Marine-blue);
+    outline: none;
+}
+
+.foc {
+    z-index: 99 !important;
+    top: 0 !important;
+    left: 15px !important;
+    background-color: var(--White);
+}
+
+.parent .content .step2 .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(153px, 10px));
+    gap: 25px;
+}
+
+.parent .content .step2 .columns .col {
+    padding: 20px;
+    border: solid 1.5px var(--Cool-gray);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.parent .content .step2 .columns .select {
+    border-color: var(--Marine-blue);
+    background-color: var(--Magnolia);
+}
+
+.parent .content .step2 .columns .col img {
+    margin-bottom: 40px;
+}
+
+.parent .content .step2 .columns .col h3 {
+    color: var(--Marine-blue);
+    margin-bottom: 6px;
+}
+
+.parent .content .step2 .columns .col h5 {
+    display: none;
+}
+
+.parent .content .step2 .columns .col span {
+    color: var(--Cool-gray);
+    display: block;
+    margin: 6px 0;
+}
+
+.parent .content .step2 .P-toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    background-color: var(--Magnolia);
+    padding: 10px 0;
+    border-radius: 8px;
+}
+
+.parent .content .step2 .P-toggle .dat {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.parent .content .step2 .P-toggle .dat .active {
+    color: var(--Marine-blue)
+}
+
+.parent .content .step2 .P-toggle .dat h4 {
+    color: var(--Cool-gray)
+}
+
+.parent .content .step2 .P-toggle .dat>div {
+    width: 60px;
+    height: 34px;
+    border-radius: 25px;
+    background-color: var(--Marine-blue);
+    position: relative;
+    cursor: pointer;
+}
+
+.parent .content .step2 .P-toggle .dat>div span {
+    height: 26px;
+    width: 26px;
+    background-color: var(--White);
+    position: absolute;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    transition: .4s;
+}
+
+.parent .content .step2 .P-toggle .dat>div .tog {
+    transform: translateX(100%);
+}
+
+.parent .content .step3 .picks .pick {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    border-radius: 8px;
+    border: solid 1.5px var(--Cool-gray);
+    transition: .4s;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.parent .content .step3 .picks .pick .info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.parent .content .step3 .picks .pick .info input {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    accent-color: var(--Purplish-blue);
+}
+
+.parent .content .step3 .picks .pick .info h3 {
+    color: var(--Marine-blue);
+}
+
+.parent .content .step3 .picks .pick .info span {
+    color: var(--Cool-gray);
+}
+
+.parent .content .step3 .picks .pick>span {
+    color: var(--Purplish-blue)
+}
+
+
+.parent .content .step4 .finishing .top {
+    background-color: var(--Magnolia);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.parent .content .step4 .finishing .top .ar-yearly {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: solid 1px var(--Cool-gray);
+}
+
+.parent .content .step4 .finishing .top .ar-yearly .left h3 {
+    color: var(--Marine-blue);
+    margin-bottom: 6px;
+}
+
+.parent .content .step4 .finishing .top .ar-yearly .left h4 {
+    color: var(--Cool-gray);
+    border-bottom: 2px solid var(--Cool-gray);
+    width: fit-content;
+    cursor: pointer;
+    transition: .4s;
+    font-weight: normal;
+}
+
+.parent .content .step4 .finishing .top .ar-yearly .left h4:hover {
+    color: var(--Purplish-blue);
+    border-bottom-color: var(--Purplish-blue);
+}
+
+.parent .content .step4 .finishing .top .ar-yearly>span {
+    color: var(--Marine-blue);
+    font-weight: bold;
+}
+
+.parent .content .step4 .finishing .top .btm {
+    padding-top: 20px;
+}
+
+.parent .content .step4 .finishing .top .btm .ser {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.parent .content .step4 .finishing .top .btm .ser h4 {
+    font-weight: normal;
+    color: var(--Cool-gray);
+}
+
+.parent .content .step4 .finishing .top .btm .storage {
+    display: flex;
+    justify-content: space-between;
+}
+
+.parent .content .step4 .finishing .top .btm .storage h4 {
+    font-weight: normal;
+    color: var(--Cool-gray);
+}
+
+.parent .content .step4 .finishing .bottom {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parent .content .step4 .finishing .bottom h4 {
+    color: var(--Cool-gray);
+    font-weight: normal;
+}
+
+.parent .content .massage img {
+    max-width: 90px;
+    margin-bottom: 20px;
+}
+
+@media(max-width: 992px) {
+    .parent {
+        flex-direction: column;
+        position: inherit;
+        height: fit-content;
+    }
+
+    .buttons {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--White);
+        border-radius: 8px;
+    }
+
+    body::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url(../assets/images/bg-sidebar-mobile.svg);
+        background-size: cover;
+        width: 100%;
+        height: 150px;
+        z-index: -1;
+    }
+
+    .parent .steps {
+        width: auto;
+        padding: 0;
+        background-image: none;
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .parent .steps ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .parent .steps ul li div {
+        display: none;
+    }
+
+    .parent .content .step2 .columns {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 10px));
+        gap: 15px;
+    }
+
+    .parent .content .con p {
+        padding-bottom: 20px;
+    }
+
+    .parent .content .step2 .columns .col img {
+        margin: 0;
+    }
+
+    .parent .content .step2 .columns .col {
+        display: flex;
+        gap: 21px;
+    }
+}
+
+@media(max-width: 600px) {
+    .parent .content {
+        padding: 0;
+    }
+
+    .parent {
+        padding: 20px 25px;
+    }
+
+    .buttons {
+        width: 100%;
+        padding: 20px;
+        border-radius: 0;
+        position: fixed;
+        z-index: 99;
+    }
+
+    body {
+        height: 115vh;
+    }
+}

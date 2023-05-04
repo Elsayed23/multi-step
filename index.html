@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="steps">
+      <ul>
+        <div class="step s1 active">
+          <li>
+            <span>1</span>
+            <div>
+              <h5>step 1</h5>
+              <h4>your info</h4>
+            </div>
+          </li>
+        </div>
+        <div class="step s2">
+          <li>
+            <span>2</span>
+            <div>
+              <h5>step 2</h5>
+              <h4>Select plan</h4>
+            </div>
+          </li>
+        </div>
+
+        <div class="step s3">
+          <li>
+            <span>3</span>
+            <div>
+              <h5>step 3</h5>
+              <h4>Add-ons</h4>
+            </div>
+          </li>
+        </div>
+        <div class="step s4">
+          <li>
+            <span>4</span>
+            <div>
+              <h5>step 4</h5>
+              <h4>Summary</h4>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="con step1 active">
+        <h1>Personal info</h1>
+        <p>Please provide your name, email address, and phone number.</p>
+        <form action="">
+          <div class="inp">
+            <span>This field is required</span>
+            <label>Name</label>
+            <input type="text" required>
+          </div>
+          <div class="inp">
+            <span>This field is required</span>
+            <label>Email Address</label>
+            <input type="email" required>
+          </div>
+          <div class="inp">
+            <span>This field is required</span>
+            <label>Phone Number</label>
+            <input type="text" required>
+          </div>
+        </form>
+      </div>
+      <div class="con step2">
+        <h1>Select your plan</h1>
+        <p>You have the option of monthly or yearly billing.</p>
+        <div class="columns">
+          <div class="col">
+            <img src="./assets/images/icon-arcade.svg" alt="">
+            <div>
+              <h3>Arcade</h3>
+              <span>$9/mo</span>
+              <h5>2 months free</h5>
+            </div>
+          </div>
+          <div class="col">
+            <img src="./assets/images/icon-advanced.svg" alt="">
+            <div>
+              <h3>Advanced</h3>
+              <span>$12/mo</span>
+              <h5>2 months free</h5>
+            </div>
+          </div>
+          <div class="col">
+            <img src="./assets/images/icon-pro.svg" alt="">
+            <div>
+              <h3>Pro</h3>
+              <span>$15/mo</span>
+              <h5>2 months free</h5>
+            </div>
+          </div>
+        </div>
+        <div class="P-toggle">
+          <div class="dat">
+            <h4 class="active">Monthly</h4>
+            <div>
+              <span></span>
+            </div>
+            <h4>Yearly</h4>
+          </div>
+        </div>
+      </div>
+      <div class="con step3">
+        <h1>Pick add-ons</h1>
+        <p>Add-ons help enhance your gaming experience.</p>
+        <div class="picks">
+          <div class="pick p1">
+            <div class="info">
+              <input type="checkbox">
+              <div>
+                <h3>Online service</h3>
+                <span>Access to multiplayer games</span>
+              </div>
+            </div>
+            <span>+$<span>1</span><span>/mo</span></span>
+          </div>
+          <div class="pick p2">
+            <div class="info">
+              <input type="checkbox">
+              <div>
+                <h3>Larger storage</h3>
+                <span>Extra 1TB of cloud save</span>
+              </div>
+            </div>
+            <span>+$<span>2</span><span>/mo</span></span>
+          </div>
+          <div class="pick p3">
+            <div class="info">
+              <input type="checkbox">
+              <div>
+                <h3>Customizable Profile</h3>
+                <span>Custom theme on your profile</span>
+              </div>
+            </div>
+            <span>+$<span>2</span><span>/mo</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="con step4">
+        <h1>Finishing up</h1>
+        <p>Double-check everything looks OK before confirming.</p>
+        <div class="finishing">
+          <div class="top">
+            <div class="ar-yearly">
+              <div class="left">
+                <h3>Arcade (<span>Monthly</span>)</h3>
+                <h4>Change</h4>
+              </div>
+              <span>+$<span>9</span><span>/mo</span></span>
+            </div>
+            <div class="btm">
+              <div class="ser">
+                <h4>Online service</h4>
+                <span>+$<span>1</span><span>/mo</span></span>
+              </div>
+              <div class="storage">
+                <h4>Larger storage</h4>
+                <span>+$<span>2</span><span>/mo</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <h4>Total (per <span>month</span>)</h4>
+            <span>+$<span>12</span><span>/mo</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="con massage">
+        <img src="./assets/images/icon-thank-you.svg" alt="">
+        <h1>Thank you!</h1>
+        <p>Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free
+          to email us at support@loremgaming.com.</p>
+      </div>
+    </div>
+    <div class="buttons">
+      <input type="button" value="go back" class="back">
+      <input type="button" value="next step" class="next">
+    </div>
+  </div>
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

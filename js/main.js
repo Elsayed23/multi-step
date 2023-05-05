@@ -12,6 +12,20 @@ let con3 = document.querySelector(".parent .content .step3")
 let con4 = document.querySelector(".parent .content .step4")
 
 
+steps.forEach((ele) => {
+    ele.addEventListener("click", () => {
+        steps.forEach((e) => {
+            e.classList.remove("active")
+        })
+        ele.classList.add("active")
+    })
+})
+
+
+
+
+
+
 
 next.addEventListener("click", () => {
     if (s1.classList.contains("active")) {
@@ -34,34 +48,27 @@ back.addEventListener("click", () => {
         steps.forEach((e) => {
             if (e.classList.contains("active")) {
                 e.classList.remove("active")
-                e.previousElementSibling.classList.add("active")
+                e.previousElementSibling.classList.add("active");
             }
         })
     }
 })
 
 setInterval(() => {
-    inp.forEach((e) => {
-        if (e.value === "") {
-            next.disabled = true;
-        }
-    })
     if (s1.classList.contains("active")) {
         back.disabled = true;
-        back.style.cursor = "no-drop";
+        back.style.cursor = "default"
+        back.style.opacity = "0";
         con1.style.display = "block"
         con2.style.display = "none"
         con3.style.display = "none"
         con4.style.display = "none"
-        sel.forEach((e) => {
-            if (e.classList.contains("select") === false) {
-                next.disabled = true;
-            }
-        })
         next.value = "next step";
     }
     if (s2.classList.contains("active")) {
         back.disabled = false;
+        back.style.opacity = "1";
+        back.style.cursor = "pointer"
         con1.style.display = "none"
         con2.style.display = "block"
         con3.style.display = "none"
@@ -69,29 +76,27 @@ setInterval(() => {
         next.value = "next step";
     }
     if (s3.classList.contains("active")) {
+        con1.style.display = "none"
         con2.style.display = "none"
         con3.style.display = "block"
         con4.style.display = "none"
         next.value = "next step";
     }
     if (s4.classList.contains("active")) {
+        con1.style.display = "none"
         con2.style.display = "none"
         con3.style.display = "none"
         con4.style.display = "block"
         next.value = "Confirm";
     }
-    inp.forEach((e) => {
-        if (e.value !== "") {
-            next.removeAttribute("disabled")
-        }
-    })
     next.addEventListener("click", () => {
         if (next.value === "Confirm") {
             let mas = document.querySelector(".content .massage")
             s4.classList.remove("active")
             con4.style.display = "none"
             mas.style.cssText = "display: flex;flex-direction: column; justify-content: center; align-items: center; text-align: center; line-height: 1.6; font-size: 17px;"
-            document.querySelector(".buttons").style.display = "none"
+            document.querySelector(".buttons").style.display = "none";
+            document.querySelector(".parent .steps").style.display = "none"
         }
     })
 }, .01)
@@ -120,11 +125,11 @@ let sel = document.querySelectorAll(".step2 .columns .col");
 
 sel.forEach((e) => {
     e.addEventListener("click", () => {
+        sel.forEach((ele) => {
+            ele.classList.remove("select")
+        })
         e.classList.toggle("select");
     })
-    if (e.classList.contains("select") === false) {
-        next.disabled = true;
-    }
 })
 
 let P_toggle = document.querySelector(".step2 .P-toggle .dat>div");
@@ -167,33 +172,45 @@ let dates = document.querySelectorAll(".parent .content .step2 .columns .col spa
 let pick = document.querySelectorAll(".step3 .picks .pick")
 let check = document.querySelectorAll(".step3 .picks .pick .info input")
 
-pick[0].addEventListener("click", () => {
-    if (check[0].checked === false) {
-        check[0].checked = true;
-        pick[0].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
+pick.forEach((ele) => {
+    ele.addEventListener("click", () => {
+    if(ele.childNodes[1].childNodes[1].checked === true) {
+        ele.style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
     } else {
-        check[0].checked = false;
-        pick[0].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
+                ele.style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
     }
+    })
 })
-pick[1].addEventListener("click", () => {
-    if (check[1].checked === false) {
-        check[1].checked = true;
-        pick[1].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
-    } else {
-        check[1].checked = false;
-        pick[1].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
-    }
-})
-pick[2].addEventListener("click", () => {
-    if (check[2].checked === false) {
-        check[2].checked = true;
-        pick[2].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
-    } else {
-        check[2].checked = false;
-        pick[2].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
-    }
-})
+
+
+
+// pick[0].addEventListener("click", () => {
+//     if (check[0].checked === false) {
+//         check[0].checked = true;
+//         pick[0].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
+//     } else {
+//         check[0].checked = false;
+//         pick[0].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
+//     }
+// })
+// pick[1].addEventListener("click", () => {
+//     if (check[1].checked === false) {
+//         check[1].checked = true;
+//         pick[1].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
+//     } else {
+//         check[1].checked = false;
+//         pick[1].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
+//     }
+// })
+// pick[2].addEventListener("click", () => {
+//     if (check[2].checked === false) {
+//         check[2].checked = true;
+//         pick[2].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
+//     } else {
+//         check[2].checked = false;
+//         pick[2].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
+//     }
+// })
 
 let par_p = document.querySelectorAll(".step3 .picks .pick");
 

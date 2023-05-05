@@ -182,36 +182,6 @@ pick.forEach((ele) => {
     })
 })
 
-
-
-// pick[0].addEventListener("click", () => {
-//     if (check[0].checked === false) {
-//         check[0].checked = true;
-//         pick[0].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
-//     } else {
-//         check[0].checked = false;
-//         pick[0].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
-//     }
-// })
-// pick[1].addEventListener("click", () => {
-//     if (check[1].checked === false) {
-//         check[1].checked = true;
-//         pick[1].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
-//     } else {
-//         check[1].checked = false;
-//         pick[1].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
-//     }
-// })
-// pick[2].addEventListener("click", () => {
-//     if (check[2].checked === false) {
-//         check[2].checked = true;
-//         pick[2].style.cssText = "border-color: var(--Marine-blue);background-color: var(--Magnolia);"
-//     } else {
-//         check[2].checked = false;
-//         pick[2].style.cssText = "border: solid 1.5px var(--Cool-gray);background-color: transparent;"
-//     }
-// })
-
 let par_p = document.querySelectorAll(".step3 .picks .pick");
 
 P_toggle.addEventListener("click", () => {

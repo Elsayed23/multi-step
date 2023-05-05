@@ -58,7 +58,9 @@ body {
     text-transform: uppercase;
     width: 38%;
 }
-
+.parent .steps .step {
+    cursor: pointer;
+}
 .parent .steps ul {
     display: flex;
     flex-direction: column;
@@ -323,6 +325,7 @@ body {
     height: 25px;
     border-radius: 50%;
     accent-color: var(--Purplish-blue);
+    cursor: pointer;
 }
 
 .parent .content .step3 .picks .pick .info h3 {

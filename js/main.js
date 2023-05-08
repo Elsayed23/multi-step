@@ -29,8 +29,8 @@ steps.forEach((ele) => {
 
 next.addEventListener("click", () => {
     if (s1.classList.contains("active")) {
-        s1.classList.remove("active")
-        s2.classList.add("active")
+        s1.classList.remove("active");
+        s2.classList.add("active");
         back.style.cursor = "pointer";
     }
     else if (s2.classList.contains("active")) {
@@ -41,7 +41,9 @@ next.addEventListener("click", () => {
         s3.classList.remove("active")
         s4.classList.add("active")
     }
-})
+});
+        back.style.cursor = "default"
+        back.style.opacity = "0";
 
 back.addEventListener("click", () => {
     if (s1.classList.contains("active") === false) {
@@ -51,14 +53,16 @@ back.addEventListener("click", () => {
                 e.previousElementSibling.classList.add("active");
             }
         })
+        if (s1.classList.contains("active")) {
+            back.disabled = true;
+             back.style.cursor = "default"
+             back.style.opacity = "0";
+        }
     }
 })
 
 setInterval(() => {
     if (s1.classList.contains("active")) {
-        back.disabled = true;
-        back.style.cursor = "default"
-        back.style.opacity = "0";
         con1.style.display = "block"
         con2.style.display = "none"
         con3.style.display = "none"
@@ -181,6 +185,7 @@ pick.forEach((ele) => {
     }
     })
 })
+
 
 let par_p = document.querySelectorAll(".step3 .picks .pick");
 
